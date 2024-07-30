@@ -208,7 +208,7 @@
                                 <i class='bx bx-moon fs-22'></i>
                             </button>
                         </div>
-
+                       
                         <div class="dropdown topbar-head-dropdown ms-1 header-item" id="notificationDropdown">
                             <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
                                 id="page-header-notifications-dropdown" data-bs-toggle="dropdown"
@@ -225,8 +225,7 @@
                                     <img class="rounded-circle header-profile-user"
                                         src="assets/images/users/avatar-1.jpg" alt="Header Avatar">
                                     <span class="text-start ms-xl-2">
-                                        <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">Anna
-                                            Adame</span>
+                                        <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">AnnaAdame</span>
                                     </span>
                                 </span>
                             </button>
@@ -355,36 +354,37 @@
                                         <div class="collapse menu-dropdown" id="sidebarSignIn">
                                             <ul class="nav nav-sm flex-column">
                                                 <li class="nav-item">
-                                                    <a href="project.html" class="nav-link" data-key="t-basic"> Project
-                                                        1
+                                                    <a href="project.html" class="nav-link" data-key="t-basic"> Project 1
                                                     </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="project.html" class="nav-link" data-key="t-cover"> Project
-                                                        2
+                                                    <a href="project.html" class="nav-link" data-key="t-cover"> Project 2
                                                     </a>
                                                 </li>
                                             </ul>
                                         </div>
                                     </li>
+                                 
                                 </ul>
                             </div>
                         </li>
+                        
+                        
                         <li class="nav-item">
                             <a class="nav-link menu-link" href="evverything.html">
                                 <i class="ri-function-line"></i><span data-key="">View All Space</span>
                             </a>
                         </li>
-
+                       
                         <li class="nav-item">
                             <a class="nav-link menu-link" href="evverything.html">
                                 <i class="ri-add-line"></i><span data-key="">Create Space</span>
                             </a>
                         </li>
-
-
-
-                        <!-- end Dashboard Menu -->
+                       
+                       
+                   
+ <!-- end Dashboard Menu -->
 
                     </ul>
                 </div>
@@ -401,6 +401,7 @@
         <!-- Start right Content here -->
         <!-- ============================================================== -->
         <div class="main-content">
+
             <div class="page-content">
                 <div class="row">
                     <div class="col-12">
@@ -453,139 +454,300 @@
                     </div>
                     
                 </div>
-                <div class="row">
-                    <div class="col-xl-4">
-                        <div class="card card-height-100">
-                            <div class="card-header align-items-center d-flex">
-                                <h4 class="card-title mb-0 flex-grow-1">Docs</h4>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row g-2">
+                            <div class="col-lg-auto">
+                                <div class="hstack gap-2">
+                                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createboardModal"><i class="ri-add-line align-bottom me-1"></i>Add Task</button>
+                                </div>
                             </div>
-
-                            <div class="card-body">
-
-                                <ul class="nav nav-sm flex-column">
-                                    <li class="nav-item">
-                                        <a href="" class="nav-link" data-key="t-analytics"><i class="ri-file-line"></i>
-                                            Project</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="" class="nav-link" data-key="t-crm"><i class="ri-align-left"></i>
-                                            Project 1</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="" class="nav-link" data-key="t-ecommerce"><i class="ri-align-left"></i>
-                                            Project 2</a>
-                                    </li>
-                                </ul>
+                            <!--end col-->
+                            <div class="col-lg-3 col-auto">
+                                <div class="search-box">
+                                    <input type="text" class="form-control search" id="search-task-options" placeholder="Search for project, tasks...">
+                                    <i class="ri-search-line search-icon"></i>
+                                </div>
+                            </div>
+                            <div class="col-auto ms-sm-auto">
+                             
+                            </div>
+                            <!--end col-->
+                        </div>
+                        <!--end row-->
+                    </div>
+                    <!--end card-body-->
+                </div>
+                <div class="tasks-board mb-3" id="kanbanboard">
+                    <div class="tasks-list">
+                        <div class="d-flex mb-3">
+                            <div class="flex-grow-1">
+                                <h6 class="fs-14 text-uppercase fw-semibold mb-0">To Do <small class="badge bg-secondary align-bottom ms-1 totaltask-badge">2</small></h6>
+                            </div>
+                            <div class="flex-shrink-0">
+                                <h3 data-bs-toggle="modal" data-bs-target="#creatertaskModal"><i class="ri-add-box-line"></i></h3>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="col-xl-4 col-md-6">
-                        <div class="card card-height-100">
-                            <div class="card-header align-items-center d-flex">
-                                <h4 class="card-title mb-0 flex-grow-1">Docs</h4>
-                            </div>
-
-                            <div class="card-body">
-
-                                <ul class="nav nav-sm flex-column">
-                                    <li class="nav-item">
-                                        <a href="" class="nav-link" data-key="t-analytics"><i class="ri-file-line"></i>
-                                            Project</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="" class="nav-link" data-key="t-crm"><i class="ri-align-left"></i>
-                                            Project 1</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="" class="nav-link" data-key="t-ecommerce"><i class="ri-align-left"></i>
-                                            Project 2</a>
-                                    </li>
-                                </ul>
+                        <div data-simplebar class="tasks-wrapper px-3 mx-n3">
+                            <div id="todo-task" class="tasks">
+                                <div class="card tasks-box">
+                                    <div class="card-body">
+                                        <div class="d-flex mb-2">
+                                            <div class="flex-grow-1">
+                                                <h6 class="fs-15 mb-0 text-truncate task-title"><a href="apps-tasks-details.html" class="d-block">Task 1</a></h6>
+                                                <p class="fs-15 mb-0 text-truncate task-title"><a href="" class="d-block">In space/Project/Project 1</a></p>
+                                            </div>
+                                            <div class="flex-shrink-0">
+                                                <a href="javascript:void(0);" class="text-muted" id="dropdownMenuLink3" data-bs-toggle="dropdown" aria-expanded="false"><i class="ri-more-fill"></i></a>
+                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink3">
+                                                    <li><a class="dropdown-item" href="apps-tasks-details.html"><i class="ri-eye-fill align-bottom me-2 text-muted"></i> View</a></li>
+                                                    <li><a class="dropdown-item" href="#"><i class="ri-edit-2-line align-bottom me-2 text-muted"></i> Edit</a></li>
+                                                    <li><a class="dropdown-item" data-bs-toggle="modal" href="#deleteRecordModal"><i class="ri-delete-bin-5-line align-bottom me-2 text-muted"></i> Delete</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <ul class="" aria-labelledby="dropdownMenuLink3">
+                                                <li><a class="dropdown-item" href=""><i class="ri-record-circle-fill"></i> To Do</a></li>
+                                                <li><a class="dropdown-item" href=""><i class="bx bx-user-circle"></i> User</a></li>
+                                                <li><a class="dropdown-item" href=""><i class="ri-calendar-line"></i> Date</a></li>
+                                                <li><a class="dropdown-item" href=""><i class="ri-flag-2-line"></i> Priority</a></li>
+                                              
+                                            </ul>
+                                        </div>                                   
+                                    </div>
+                                    <!--end card-body-->
+                                </div>
+                                <!--end card-->
                             </div>
                         </div>
+                        <div class="my-3">
+                            <button class="btn btn-soft-info w-100" data-bs-toggle="modal" data-bs-target="#creatertaskModal">Add Task</button>
+                        </div>
                     </div>
-
-                    <div class="col-xl-4 col-md-6">
-                        <div class="card card-height-100">
-                            <div class="card-header align-items-center d-flex">
-                                <h4 class="card-title mb-0 flex-grow-1">Resources</h4>
+                    <!--end tasks-list-->
+                    <div class="tasks-list">
+                        <div class="d-flex mb-3">
+                            <div class="flex-grow-1">
+                                <h6 class="fs-14 text-uppercase fw-semibold mb-0">In Progress <small class="badge bg-warning align-bottom ms-1 totaltask-badge">2</small></h6>
                             </div>
-
-                            <div class="card-body">
-
-                                <div class="row align-items-center">
-
+                            <div class="flex-shrink-0">
+                                <h3 data-bs-toggle="modal" data-bs-target="#creatertaskModal"><i class="ri-add-box-line"></i></h3>
+                            </div>
+                        </div>
+                        <div data-simplebar class="tasks-wrapper px-3 mx-n3">
+                            <div id="inprogress-task" class="tasks">
+                                <div class="card tasks-box">
+                                    <div class="card-body">
+                                        <div class="d-flex mb-2">
+                                            <div class="flex-grow-1">
+                                                <h6 class="fs-15 mb-0 text-truncate task-title"><a href="apps-tasks-details.html" class="d-block">Task 1</a></h6>
+                                                <p class="fs-15 mb-0 text-truncate task-title"><a href="" class="d-block">In space/Project/Project 1</a></p>
+                                            </div>
+                                            <div class="flex-shrink-0">
+                                                <a href="javascript:void(0);" class="text-muted" id="dropdownMenuLink3" data-bs-toggle="dropdown" aria-expanded="false"><i class="ri-more-fill"></i></a>
+                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink3">
+                                                    <li><a class="dropdown-item" href="apps-tasks-details.html"><i class="ri-eye-fill align-bottom me-2 text-muted"></i> View</a></li>
+                                                    <li><a class="dropdown-item" href="#"><i class="ri-edit-2-line align-bottom me-2 text-muted"></i> Edit</a></li>
+                                                    <li><a class="dropdown-item" data-bs-toggle="modal" href="#deleteRecordModal"><i class="ri-delete-bin-5-line align-bottom me-2 text-muted"></i> Delete</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <ul class="" aria-labelledby="dropdownMenuLink3">
+                                                <li><a class="dropdown-item" href=""><i class="ri-record-circle-fill"></i> To Do</a></li>
+                                                <li><a class="dropdown-item" href=""><i class="bx bx-user-circle"></i> User</a></li>
+                                                <li><a class="dropdown-item" href=""><i class="ri-calendar-line"></i> Date</a></li>
+                                                <li><a class="dropdown-item" href=""><i class="ri-flag-2-line"></i> Priority</a></li>
+                                              
+                                            </ul>
+                                        </div>                                   
+                                    </div>
+                                    <!--end card-body-->
                                 </div>
-                                <div class="mt-3 pt-2">
-
+                                <!--end card-->
+                                <div class="card tasks-box">
+                                    <div class="card-body">
+                                        <div class="d-flex mb-2">
+                                            <div class="flex-grow-1">
+                                                <h6 class="fs-15 mb-0 text-truncate task-title"><a href="apps-tasks-details.html" class="d-block">Task 1</a></h6>
+                                                <p class="fs-15 mb-0 text-truncate task-title"><a href="" class="d-block">In space/Project/Project 1</a></p>
+                                            </div>
+                                            <div class="flex-shrink-0">
+                                                <a href="javascript:void(0);" class="text-muted" id="dropdownMenuLink3" data-bs-toggle="dropdown" aria-expanded="false"><i class="ri-more-fill"></i></a>
+                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink3">
+                                                    <li><a class="dropdown-item" href="apps-tasks-details.html"><i class="ri-eye-fill align-bottom me-2 text-muted"></i> View</a></li>
+                                                    <li><a class="dropdown-item" href="#"><i class="ri-edit-2-line align-bottom me-2 text-muted"></i> Edit</a></li>
+                                                    <li><a class="dropdown-item" data-bs-toggle="modal" href="#deleteRecordModal"><i class="ri-delete-bin-5-line align-bottom me-2 text-muted"></i> Delete</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <ul class="" aria-labelledby="dropdownMenuLink3">
+                                                <li><a class="dropdown-item" href=""><i class="ri-record-circle-fill"></i> To Do</a></li>
+                                                <li><a class="dropdown-item" href=""><i class="bx bx-user-circle"></i> User</a></li>
+                                                <li><a class="dropdown-item" href=""><i class="ri-calendar-line"></i> Date</a></li>
+                                                <li><a class="dropdown-item" href=""><i class="ri-flag-2-line"></i> Priority</a></li>
+                                              
+                                            </ul>
+                                        </div>                                   
+                                    </div>
+                                    <!--end card-body-->
                                 </div>
+                                <!--end card-->
+                            </div>
+                        </div>
+                        <div class="my-3">
+                            <button class="btn btn-soft-info w-100" data-bs-toggle="modal" data-bs-target="#creatertaskModal">Add Task</button>
+                        </div>
+                    </div>
+                    <!--end tasks-list-->
+                    <div class="tasks-list">
+                        <div class="d-flex mb-3">
+                            <div class="flex-grow-1">
+                                <h6 class="fs-14 text-uppercase fw-semibold mb-0">Completed <small class="badge bg-success align-bottom ms-1 totaltask-badge">1</small></h6>
+                            </div>
+                            <div class="flex-shrink-0">
+                                <h3 data-bs-toggle="modal" data-bs-target="#creatertaskModal"><i class="ri-add-box-line"></i></h3>
+                            </div>
+                        </div>
+                        <div data-simplebar class="tasks-wrapper px-3 mx-n3">
+                            <div id="completed-task" class="tasks">
+                                <div class="card tasks-box">
+                                    <div class="card-body">
+                                        <div class="d-flex mb-2">
+                                            <div class="flex-grow-1">
+                                                <h6 class="fs-15 mb-0 text-truncate task-title"><a href="apps-tasks-details.html" class="d-block">Task 1</a></h6>
+                                                <p class="fs-15 mb-0 text-truncate task-title"><a href="" class="d-block">In space/Project/Project 1</a></p>
+                                            </div>
+                                            <div class="flex-shrink-0">
+                                                <a href="javascript:void(0);" class="text-muted" id="dropdownMenuLink3" data-bs-toggle="dropdown" aria-expanded="false"><i class="ri-more-fill"></i></a>
+                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink3">
+                                                    <li><a class="dropdown-item" href="apps-tasks-details.html"><i class="ri-eye-fill align-bottom me-2 text-muted"></i> View</a></li>
+                                                    <li><a class="dropdown-item" href="#"><i class="ri-edit-2-line align-bottom me-2 text-muted"></i> Edit</a></li>
+                                                    <li><a class="dropdown-item" data-bs-toggle="modal" href="#deleteRecordModal"><i class="ri-delete-bin-5-line align-bottom me-2 text-muted"></i> Delete</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <ul class="task-details-list" aria-labelledby="dropdownMenuLink3">
+                                                <li><a class="dropdown-item" href=""><i class="ri-record-circle-fill"></i> To Do</a></li>
+                                                <li><a class="dropdown-item" href=""><i class="bx bx-user-circle"></i> User</a></li>
+                                                <li><a class="dropdown-item" href=""><i class="ri-calendar-line"></i> Date</a></li>
+                                                <li><a class="dropdown-item" href=""><i class="ri-flag-2-line"></i> Priority</a></li>
+                                            </ul>
+                                        </div>                                   
+                                    </div>
+                                    <!--end card-body-->
+                                </div>
+                                <!--end card-->
+                            </div>
+                        </div>
+                        <div class="my-3">
+                            <button class="btn btn-soft-info w-100" data-bs-toggle="modal" data-bs-target="#creatertaskModal">Add Task</button>
+                        </div>
+                    </div>
+                    <!--end tasks-list-->
+                </div>
+                <!--end task-board-->
+
+                <div class="modal fade" id="createboardModal" tabindex="-1" aria-labelledby="createboardModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content border-0">
+                            <div class="modal-header p-3 bg-info-subtle">
+                                <h5 class="modal-title" id="createboardModalLabel">Add Task</h5>
+                                <button type="button" class="btn-close" id="addBoardBtn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="#">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <label for="boardName" class="form-label">Task</label>
+                                            <input type="text" class="form-control" id="boardName" placeholder="Enter task name">
+                                        </div>
+                                        <div class="mt-4">
+                                            <div class="hstack gap-2 justify-content-end">
+                                                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-success" id="addNewBoard">Add Task</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="card card-height-100">
-                            <div class="card-header align-items-center d-flex">
-                                <h4 class="card-title mb-0 flex-grow-1">Folders</h4>
+                <!--end add board modal-->
+                <div class="modal fade" id="creatertaskModal" tabindex="-1" aria-labelledby="creatertaskModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content border-0">
+                            <div class="modal-header p-3 bg-info-subtle">
+                                <h5 class="modal-title" id="creatertaskModalLabel">Create New Task</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-
-                            <div class="card-body">
-                                <a href="project.html" class="nav-link" data-key="t-analytics"><i
-                                        class="bx bx-wallet"></i><span> Project</span></a>
+                            <div class="modal-body">
+                                <form action="#">
+                                    <div class="row g-3">
+                                        <div class="col-lg-12">
+                                            <label for="taskName" class="form-label">Task Name</label>
+                                            <input type="text" class="form-control" id="taskName" placeholder="Enter task name">
+                                        </div>
+                                        <!--end col-->
+                                        <div class="col-lg-12">
+                                            <label for="sub-tasks" class="form-label">Assignee</label>
+                                            <input type="text" class="form-control" id="sub-tasks" placeholder="Add assignee">
+                                        </div>
+                                        <!--end col-->
+                                        <div class="col-lg-12">
+                                            <label for="task-description" class="form-label">Date</label>
+                                            <input type="date" class="form-control" id="task-description" placeholder="Add date">
+                                        </div>
+                                        <!--end col-->
+                                        <div class="col-lg-12">
+                                            <label for="task-description" class="form-label">Priority</label>
+                                            <input class="form-control" id="task-description"  placeholder="Add priority">
+                                        </div>
+                                        <!--end col-->
+                                     
+                                        <div class="mt-4">
+                                            <div class="hstack gap-2 justify-content-end">
+                                                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-success">Add Task</button>
+                                            </div>
+                                        </div>
+                                        <!--end col-->
+                                    </div>
+                                    <!--end row-->
+                                </form>
                             </div>
                         </div>
                     </div>
-
-
                 </div>
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="card">
-                            <div class="card-header align-items-center d-flex">
-                                <h4 class="card-title mb-0 flex-grow-1">Lists</h4>
+                <!--end add board modal-->
 
-                            </div><!-- end card header -->
-
-                            <div class="card-body">
-                                <div class="live-preview">
-                                    <div class="table-responsive table-card">
-                                        <table class="table align-middle table-nowrap table-striped-columns mb-0">
-                                            <thead class="table-light">
-                                                <tr>
-                                                    <th scope="col">Name</th>
-                                                    <th scope="col">Color</th>
-                                                    <th scope="col">Progess</th>
-                                                    <th scope="col">Start</th>
-                                                    <th scope="col">End</th>
-                                                    <th scope="col">Priority</th>
-                                                    <th scope="col">Owner</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>Dự án 1</td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                </tr>
-
-                                            </tbody>
-                                        </table>
+                <div class="modal fade zoomIn" id="deleteRecordModal" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="delete-btn-close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="mt-2 text-center">
+                                    <lord-icon src="https://cdn.lordicon.com/gsqxdxog.json" trigger="loop" colors="primary:#f7b84b,secondary:#f06548" style="width:100px;height:100px"></lord-icon>
+                                    <div class="mt-4 pt-2 fs-15 mx-4 mx-sm-5">
+                                        <h4>Are you sure ?</h4>
+                                        <p class="text-muted mx-4 mb-0">Are you sure you want to remove this tasks ?</p>
                                     </div>
                                 </div>
-                                <div class="d-none code-view">
-
+                                <div class="d-flex gap-2 justify-content-center mt-4 mb-2">
+                                    <button type="button" class="btn w-sm btn-light" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn w-sm btn-danger" id="delete-record">Yes, Delete It!</button>
                                 </div>
-                            </div><!-- end card-body -->
-                        </div><!-- end card -->
-                    </div><!-- end col -->
-
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <!--end modal -->
             </div>
             <!-- End Page-content -->
             <footer class="footer">
@@ -607,7 +769,6 @@
 
     </div>
     <!-- END layout-wrapper -->
-
 
 
     <!--start back-to-top-->
