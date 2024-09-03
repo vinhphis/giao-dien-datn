@@ -1,0 +1,1728 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- Layout config Js -->
+    <script src="assets/js/layout.js"></script>
+    <!-- Bootstrap Css -->
+    <link
+      href="assets/css/bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- Icons Css -->
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <!-- custom Css-->
+    <link href="assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="assets/libs/dropzone/dropzone.css"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+  </head>
+  <style>
+    /* Import Google font - Poppins */
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+    .wrapper {
+      width: 100%;
+      /* box-shadow: 0 15px 100px rgba(0, 0, 0, 0.12); */
+    }
+    .wrapper header {
+      display: flex;
+      align-items: center;
+      padding: 25px 30px 10px;
+      justify-content: space-between;
+    }
+    header .icons {
+      display: flex;
+    }
+    header .icons span {
+      height: 38px;
+      width: 38px;
+      margin: 0 1px;
+      cursor: pointer;
+      color: #878787;
+      text-align: center;
+      line-height: 38px;
+      font-size: 1.9rem;
+      user-select: none;
+      border-radius: 50%;
+    }
+    .icons span:last-child {
+      margin-right: -10px;
+    }
+    header .icons span:hover {
+      background: #f2f2f2;
+    }
+    header .current-date {
+      font-size: 1.45rem;
+      font-weight: 500;
+    }
+    .calendar {
+      padding: auto;
+    }
+    .calendar ul {
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      text-align: center;
+    }
+    .calendar .days {
+      margin-bottom: 50px;
+    }
+    .calendar li {
+      color: #333;
+      width: calc(100% / 7);
+      font-size: 1.07rem;
+    }
+    .calendar .weeks li {
+      font-weight: 500;
+      cursor: default;
+    }
+    .calendar .days li {
+      z-index: 1;
+      cursor: pointer;
+      position: relative;
+      margin-top: 30px;
+    }
+    .days li.inactive {
+      color: #aaa;
+    }
+    .days li.active {
+      color: #fff;
+    }
+    .days li::before {
+      position: absolute;
+      content: "";
+      left: 50%;
+      top: 50%;
+      height: 40px;
+      width: 40px;
+      z-index: -1;
+      border-radius: 5%;
+      transform: translate(-50%, -50%);
+    }
+    .days li.active::before {
+      background: #2d50af;
+    }
+    .days li:not(.active):hover::before {
+      background: #f2f2f2;
+    }
+  </style>
+  <body class="bg-info-subtle">
+    <div class="container">
+      <!-- thêm thành viên -->
+      <div class="bg-light-subtle rounded p-3" style="width: 35%">
+        <h5 class="text-center">Thành viên</h5>
+        <form action="">
+          <input
+            type="text"
+            name=""
+            id=""
+            class="form-control border-0"
+            placeholder="Tìm kiếm thành viên"
+          />
+        </form>
+        <!-- thành viên của thẻ -->
+        <div class="mt-3">
+          <strong class="fs-14">Thành viên của thẻ</strong>
+          <ul class="" style="list-style: none; margin-left: -32px">
+            <li class="d-flex justify-content-between align-items-center">
+              <div class="d-flex align-items-center">
+                <a
+                  href="javascript: void(0);"
+                  class="avatar-group-item"
+                  data-bs-toggle="tooltip"
+                  data-bs-trigger="hover"
+                  data-bs-placement="top"
+                  title="Nancy"
+                >
+                  <img
+                    src="assets/images/users/avatar-5.jpg"
+                    alt=""
+                    class="rounded-circle avatar-xs"
+                  />
+                </a>
+                <p class="ms-3 mt-3">vinhpq</p>
+              </div>
+
+              <i class="ri-close-line fs-20"></i>
+            </li>
+          </ul>
+        </div>
+        <!-- thành viên của bảng -->
+        <div class="mt-3">
+          <strong class="fs-14">Thành viên của bảng</strong>
+          <ul class="" style="list-style: none; margin-left: -32px">
+            <li class="d-flex justify-content-between align-items-center">
+              <div class="d-flex align-items-center">
+                <a
+                  href="javascript: void(0);"
+                  class="avatar-group-item"
+                  data-bs-toggle="tooltip"
+                  data-bs-trigger="hover"
+                  data-bs-placement="top"
+                  title="Nancy"
+                >
+                  <img
+                    src="assets/images/users/avatar-5.jpg"
+                    alt=""
+                    class="rounded-circle avatar-xs"
+                  />
+                </a>
+                <p class="ms-3 mt-3">vinhpq</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- Thành viên Không gian làm việc -->
+        <div class="mt-3">
+          <strong class="fs-14">Thành viên Không gian làm việc</strong>
+          <ul class="" style="list-style: none; margin-left: -32px">
+            <li class="d-flex justify-content-between align-items-center">
+              <div class="d-flex align-items-center">
+                <a
+                  href="javascript: void(0);"
+                  class="avatar-group-item"
+                  data-bs-toggle="tooltip"
+                  data-bs-trigger="hover"
+                  data-bs-placement="top"
+                  title="Nancy"
+                >
+                  <img
+                    src="assets/images/users/avatar-5.jpg"
+                    alt=""
+                    class="rounded-circle avatar-xs"
+                  />
+                </a>
+                <p class="ms-3 mt-3">vinhpq</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- thêm nhãn -->
+      <div class="bg-light-subtle rounded p-3 mt-5" style="width: 35%">
+        <h5 class="text-center">Nhãn</h5>
+        <form action="">
+          <input
+            type="text"
+            name=""
+            id=""
+            class="form-control border-0"
+            placeholder="Tìm nhãn..."
+          />
+        </form>
+        <!-- thành viên của thẻ -->
+        <div class="mt-3">
+          <strong class="fs-14">Nhãn</strong>
+          <ul class="" style="list-style: none; margin-left: -32px">
+            <li class="mt-1 d-flex justify-content-between align-items-center">
+              <div class="d-flex align-items-center w-100">
+                <input
+                  type="checkbox"
+                  name=""
+                  id="danger_tags"
+                  class="form-check-input"
+                />
+                <span class="bg bg-danger mx-2 rounded p-3 col-11"> </span>
+              </div>
+              <i class="ri-pencil-line fs-20"></i>
+            </li>
+            <li class="mt-1 d-flex justify-content-between align-items-center">
+              <div class="d-flex align-items-center w-100">
+                <input
+                  type="checkbox"
+                  name=""
+                  id="danger_tags"
+                  class="form-check-input"
+                />
+                <span class="bg bg-info mx-2 rounded p-3 col-11"> </span>
+              </div>
+              <i class="ri-pencil-line fs-20"></i>
+            </li>
+            <li class="mt-1 d-flex justify-content-between align-items-center">
+              <div class="d-flex align-items-center w-100">
+                <input
+                  type="checkbox"
+                  name=""
+                  id="danger_tags"
+                  class="form-check-input"
+                />
+                <span class="bg bg-success mx-2 rounded p-3 col-11"> </span>
+              </div>
+              <i class="ri-pencil-line fs-20"></i>
+            </li>
+          </ul>
+        </div>
+        <div class="card">
+          <button class="btn bg-dark-subtle">Tạo nhãn mới</button>
+        </div>
+      </div>
+
+      <!-- thêm tệp -->
+      <div class="bg-light-subtle rounded p-3 mt-5" style="width: 35%">
+        <h5 class="text-center" class="fs-14">Đính kèm</h5>
+        <form action="" class="border-bottom mt-3">
+          <strong class="fs-14">Đính kèm tệp từ máy tính của bạn</strong>
+          <input type="file" name="" id="" class="form-control mt-2" />
+        </form>
+        <!-- thành viên của thẻ -->
+        <div class="mt-3">
+          <strong class="fs-14">Đã xem gần đây</strong>
+          <ul class="" style="list-style: none; margin-left: -32px">
+            <li class="mt-1 d-flex justify-content-between align-items-center">
+              <i class="ri-artboard-line fs-20"></i>
+              <div class="w-100">
+                <strong class="ms-2 rounded">Tên thẻ</strong>
+                <br />
+                <span class="ms-2">Tên bảng - Đã xem 2 giờ trước</span>
+              </div>
+            </li>
+            <li class="mt-2 d-flex justify-content-between align-items-center">
+              <i class="ri-artboard-line fs-20"></i>
+              <div class="w-100">
+                <strong class="ms-2 rounded">Tên thẻ</strong>
+                <br />
+                <span class="ms-2">Tên bảng - Đã xem 2 giờ trước</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="card">
+          <button class="btn bg-dark-subtle">Lưu</button>
+        </div>
+      </div>
+
+      <!-- sao chép thẻ -->
+      <div class="bg-light-subtle rounded p-3 mt-5" style="width: 35%">
+        <h5 class="text-center">Sao chép thẻ</h5>
+        <form action="">
+          <div>
+            <strong class="fs-14">Tên</strong>
+            <input
+              type="text"
+              name=""
+              id=""
+              class="form-control border-0 my-2"
+              placeholder="Tên thẻ"
+            />
+          </div>
+          <div>
+            <strong class="fs-14 mt-3">Giữ</strong>
+            <ul style="list-style: none; margin-left: -32px" class="mt-2">
+              <li>
+                <input type="checkbox" name="" id="" class="form-check-input" />
+                <label for="">Danh sách công việc</label> <span>(1)</span>
+              </li>
+              <li>
+                <input type="checkbox" name="" id="" class="form-check-input" />
+                <label for="">Thành viên</label> <span>(1)</span>
+              </li>
+              <li>
+                <input type="checkbox" name="" id="" class="form-check-input" />
+                <label for="">Tệp đính kèm</label> <span>(1)</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <strong class="fs-14">Sao chép tới...</strong>
+            <div class="mt-2">
+              <strong class="fs-16">Bảng thông tin</strong>
+              <select name="" id="" class="form-select">
+                <option value="">FPT</option>
+              </select>
+            </div>
+            <div class="row mt-2">
+              <section class="col-8">
+                <strong class="fs-16">Danh sách</strong>
+                <select name="" id="" class="form-select">
+                  <option value="">dự án tốt nghiệp</option>
+                </select>
+              </section>
+              <section class="col-4">
+                <strong class="fs-16">Vị trí</strong>
+                <select name="" id="" class="form-select">
+                  <option value="">1</option>
+                </select>
+              </section>
+            </div>
+          </div>
+        </form>
+
+        <div class="mt-3">
+          <button class="btn bg-primary text-white">Tạo thẻ</button>
+        </div>
+      </div>
+
+      <!-- ngày bắt đầu & kết thúc  -->
+      <div class="bg-light-subtle rounded p-3 mt-5" style="width: 35%">
+        <h5 class="text-center">Ngày</h5>
+        <form action="">
+          <!-- lịch -->
+          <div class="wrapper">
+            <header>
+              <p class="current-date"></p>
+              <div class="icons">
+                <span id="prev" class="material-symbols-rounded"
+                  >chevron_left</span
+                >
+                <span id="next" class="material-symbols-rounded"
+                  >chevron_right</span
+                >
+              </div>
+            </header>
+            <div class="calendar">
+              <ul class="weeks">
+                <li>Sun</li>
+                <li>Mon</li>
+                <li>Tue</li>
+                <li>Wed</li>
+                <li>Thu</li>
+                <li>Fri</li>
+                <li>Sat</li>
+              </ul>
+              <ul class="days"></ul>
+            </div>
+          </div>
+          <!-- ngày bắt đầu -->
+          <div>
+            <strong class="fs-14">Ngày bắt đầu</strong>
+            <input
+              type="datetime-local"
+              name=""
+              id=""
+              class="form-control border-0 my-2"
+            />
+          </div>
+          <div>
+            <strong class="fs-14">Ngày kết thúc</strong>
+            <input
+              type="datetime-local"
+              name=""
+              id=""
+              class="form-control border-0 my-2"
+            />
+          </div>
+          <div class="mt-2">
+            <strong class="fs-16">Thiết lập nhắc nhỏ</strong>
+            <select name="" id="" class="form-select">
+              <option value="">1 ngày trước</option>
+            </select>
+          </div>
+        </form>
+
+        <div class="mt-3 card">
+          <button class="btn bg-primary text-white">Lưu</button>
+        </div>
+      </div>
+
+      <!-- chia sẻ -->
+      <div class="bg-light-subtle rounded p-3 mt-5" style="width: 35%">
+        <h5 class="text-center" class="fs-14">Chia sẻ</h5>
+        <div class="border-bottom mt-3">
+          <strong class="fs-14">Đường dẫn đến thẻ </strong>
+          <i class="ri-earth-line fs-20 text-success"></i>
+          <i class="ri-shield-user-fill fs-20 text-primary"></i>
+          <i class="ri-lock-2-line fs-20 text-danger"></i>
+          <input type="text" name="" id="" class="form-control mt-2" />
+          <p class="mt-2">Hiện mã QR</p>
+        </div>
+      </div>
+
+      <!-- giao diện thẻ-->
+      <div class="modal-dialog modal-dialog-centered modal-lg mt-5">
+        <div class="modal-content border-0 rounded-3">
+          <div
+            class="modal-header p-3"
+            style="
+              height: 150px;
+              object-fit: cover;
+              background-image: url('assets/images/small/img-7.jpg');
+            "
+            id="creatertaskModalLabel"
+          >
+            <div></div>
+            <button
+              type="button"
+              class="btn-close bg-white"
+              style="margin: -100px -5px 0px 0px"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form action="#">
+              <div class="row">
+                <div class="col-8 p-2">
+                  <div class="row">
+                    <div class="col-12">
+                      <!-- Input Border Style -->
+                      <div>
+                        <section class="d-flex mb-2">
+                          <i class="ri-artboard-line fs-22"></i>
+                          <input
+                            type="text"
+                            class="form-control border-0 ms-1 fs-18 fw-medium bg-transparent"
+                            id="borderInput"
+                            placeholder="Enter your name"
+                          />
+                        </section>
+                        <span class="ms-5">trong danh sách ...</span>
+                      </div>
+                    </div>
+                    <div class="col-12 d-flex mt-3">
+                      <div class="ps-4">
+                        <strong>Thành viên</strong>
+                        <section class="d-flex">
+                          <!-- thêm thành viên & chia sẻ link bảng -->
+                          <div
+                            class="d-flex justify-content-center align-items-center cursor-pointer me-2"
+                          >
+                            <div class="col-auto ms-sm-auto">
+                              <div class="avatar-group" id="newMembar">
+                                <a
+                                  href="javascript: void(0);"
+                                  class="avatar-group-item"
+                                  data-bs-toggle="tooltip"
+                                  data-bs-trigger="hover"
+                                  data-bs-placement="top"
+                                  title="Nancy"
+                                >
+                                  <img
+                                    src="assets/images/users/avatar-5.jpg"
+                                    alt=""
+                                    class="rounded-circle avatar-xs"
+                                  />
+                                </a>
+                                <a
+                                  href="javascript: void(0);"
+                                  class="avatar-group-item"
+                                  data-bs-toggle="tooltip"
+                                  data-bs-trigger="hover"
+                                  data-bs-placement="top"
+                                  title="Frank"
+                                >
+                                  <img
+                                    src="assets/images/users/avatar-3.jpg"
+                                    alt=""
+                                    class="rounded-circle avatar-xs"
+                                  />
+                                </a>
+                                <a
+                                  href="javascript: void(0);"
+                                  class="avatar-group-item"
+                                  data-bs-toggle="tooltip"
+                                  data-bs-trigger="hover"
+                                  data-bs-placement="top"
+                                  title="Tonya"
+                                >
+                                  <img
+                                    src="assets/images/users/avatar-10.jpg"
+                                    alt=""
+                                    class="rounded-circle avatar-xs"
+                                  />
+                                </a>
+                                <a
+                                  href="javascript: void(0);"
+                                  class="avatar-group-item"
+                                  data-bs-toggle="tooltip"
+                                  data-bs-trigger="hover"
+                                  data-bs-placement="top"
+                                  title="Thomas"
+                                >
+                                  <img
+                                    src="assets/images/users/avatar-8.jpg"
+                                    alt=""
+                                    class="rounded-circle avatar-xs"
+                                  />
+                                </a>
+                                <a
+                                  href="javascript: void(0);"
+                                  class="avatar-group-item"
+                                  data-bs-toggle="tooltip"
+                                  data-bs-trigger="hover"
+                                  data-bs-placement="top"
+                                  title="Herbert"
+                                >
+                                  <img
+                                    src="assets/images/users/avatar-2.jpg"
+                                    alt=""
+                                    class="rounded-circle avatar-xs"
+                                  />
+                                </a>
+      
+                                <button
+                                  type="button"
+                                  class="border-0 bg-transparent"
+                                  data-bs-toggle="dropdown"
+                                  aria-haspopup="true"
+                                  aria-expanded="false"
+                                >
+                                  <div class="avatar-xs">
+                                    <div class="avatar-title rounded-circle">+</div>
+                                  </div>
+                                </button>
+      
+                                <div class="dropdown-menu dropdown-menu-md p-4">
+                                  <form>
+                                    <div class="mb-2">
+                                      <label
+                                        class="form-label"
+                                        for="exampleDropdownFormEmail"
+                                        >Email address</label
+                                      >
+                                      <input
+                                        type="email"
+                                        class="form-control"
+                                        id="exampleDropdownFormEmail"
+                                        placeholder="email@example.com"
+                                      />
+                                    </div>
+                                    <div class="mb-2">
+                                      <label
+                                        class="form-label"
+                                        for="exampleDropdownFormPassword"
+                                        >Password</label
+                                      >
+                                      <input
+                                        type="password"
+                                        class="form-control"
+                                        id="exampleDropdownFormPassword"
+                                        placeholder="Password"
+                                      />
+                                    </div>
+                                    <div class="mb-2">
+                                      <div class="form-check custom-checkbox">
+                                        <input
+                                          type="checkbox"
+                                          class="form-check-input"
+                                          id="rememberdropdownCheck"
+                                        />
+                                        <label
+                                          class="form-check-label"
+                                          for="rememberdropdownCheck"
+                                          >Remember me</label
+                                        >
+                                      </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">
+                                      Sign in
+                                    </button>
+                                  </form>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </section>
+                      </div>
+                      <div class="ps-4">
+                        <strong>Thông báo</strong>
+                        <div
+                          class="d-flex align-items-center justify-content-between rounded p-3 text-white cursor-pointer"
+                          style="height: 30px; background-color: darkgray"
+                        >
+                          <i class="ri-eye-line fs-22"></i>
+                          <p class="ms-2 mt-3 fs-10">Theo dõi</p>
+                          <div>
+                            <i
+                              class="ri-check-line fs-22 bg-light ms-2 rounded"
+                              style="color: black"
+                            ></i>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="ps-4">
+                        <strong>Ngày hết hạn</strong>
+                        <div
+                          class="d-flex align-items-center justify-content-between rounded p-3 text-white cursor-pointer"
+                          style="height: 30px; background-color: darkgray"
+                        >
+                          <input
+                            type="checkbox"
+                            name=""
+                            id=""
+                            class="form-check-input"
+                            checked
+                          />
+                          <p class="ms-2 mt-3 fs-10">20:00 28 thg 8</p>
+      
+                          <span class="badge bg-success ms-2">Hoàn tất</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- mô tả -->
+                  <div class="row mt-3">
+                    <section class="d-flex">
+                      <i class="ri-menu-2-line fs-22"></i>
+                      <p class="fs-18 ms-2 mt-1">Mô tả</p>
+                    </section>
+                    <div class="ps-4">
+                      <textarea
+                        name=""
+                        id=""
+                        cols="25"
+                        rows="5"
+                        class="form-control bg-light"
+                        placeholder="Thêm mô tả chi tiết"
+                      ></textarea>
+                    </div>
+                  </div>
+                  <!-- tệp -->
+                  <div class="row mt-3">
+                    <section class="d-flex">
+                      <i class="ri-link-m fs-22"></i>
+                      <p class="fs-18 ms-2 mt-1">Tệp đính kèm</p>
+                    </section>
+                    <div class="ps-4">
+                      <strong>Thẻ tên dự án</strong>
+                      <div
+                        class="d-flex flex-wrap row mt-2"
+                        style="align-items: start"
+                      >
+                        <!-- start card -->
+                        <div class="col-6">
+                          <div class="card card-height-100">
+                            <div class="card-body">
+                              <div class="d-flex flex-column h-100">
+                                <div class="d-flex">
+                                  <div class="flex-grow-1">
+                                    <p class="text-muted mb-4"></p>
+                                  </div>
+                                  <div class="flex-shrink-0">
+                                    <div class="d-flex gap-1 align-items-center">
+                                      menu
+                                    </div>
+                                  </div>
+                                </div>
+      
+                                <div class="d-flex mb-2 rounded bg-info-subtle p-2">
+                                  <div class="flex-grow-1">
+                                    <h5>Tên thẻ</h5>
+                                    <div class="d-flex">
+                                      <span class="badge bg-success me-1"
+                                        >giao diện</span
+                                      >
+                                      <span class="badge bg-danger">code khó</span>
+                                    </div>
+                                    <div class="mt-3 d-flex justify-content-between">
+                                      <div class="avatar-group">
+                                        <a
+                                          href="javascript: void(0);"
+                                          class="avatar-group-item"
+                                          data-bs-toggle="tooltip"
+                                          data-bs-trigger="hover"
+                                          data-bs-placement="top"
+                                          title="Darline Williams"
+                                        >
+                                          <div class="avatar-xxs">
+                                            <img
+                                              src="assets/images/users/avatar-2.jpg"
+                                              alt=""
+                                              class="rounded-circle img-fluid"
+                                            />
+                                          </div>
+                                        </a>
+                                        <a
+                                          href="javascript: void(0);"
+                                          class="avatar-group-item"
+                                          data-bs-toggle="tooltip"
+                                          data-bs-trigger="hover"
+                                          data-bs-placement="top"
+                                          title="Add Members"
+                                        >
+                                          <div class="avatar-xxs">
+                                            <div
+                                              class="avatar-title fs-16 rounded-circle bg-light border-dashed border text-primary"
+                                            >
+                                              +
+                                            </div>
+                                          </div>
+                                        </a>
+                                      </div>
+                                      <ul class="link-inline mb-0">
+                                        <!-- theo dõi -->
+                                        <li class="list-inline-item">
+                                          <a
+                                            href="javascript:void(0)"
+                                            class="text-muted"
+                                            ><i class="ri-eye-line align-bottom"></i>
+                                            04</a
+                                          >
+                                        </li>
+                                        <!-- bình luận -->
+                                        <li class="list-inline-item">
+                                          <a
+                                            href="javascript:void(0)"
+                                            class="text-muted"
+                                            ><i
+                                              class="ri-question-answer-line align-bottom"
+                                            ></i>
+                                            19</a
+                                          >
+                                        </li>
+                                        <!-- tệp đính kèm -->
+                                        <li class="list-inline-item">
+                                          <a
+                                            href="javascript:void(0)"
+                                            class="text-muted"
+                                            ><i
+                                              class="ri-attachment-2 align-bottom"
+                                            ></i>
+                                            02</a
+                                          >
+                                        </li>
+                                        <!-- checklist -->
+                                        <li class="list-inline-item">
+                                          <a
+                                            href="javascript:void(0)"
+                                            class="text-muted"
+                                            ><i
+                                              class="ri-checkbox-line align-bottom"
+                                            ></i>
+                                            2/4</a
+                                          >
+                                        </li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- end card body -->
+                            <div
+                              class="card-footer bg-transparent border-top-dashed py-2"
+                            >
+                              <div class="flex-grow-1">Tên bảng : Tên list</div>
+                            </div>
+                            <!-- end card footer -->
+                          </div>
+                          <!-- end card -->
+                        </div>
+                        <!-- start card -->
+                        <div class="col-6">
+                          <div class="card card-height-100">
+                            <div class="card-body">
+                              <div class="d-flex flex-column h-100">
+                                <div class="d-flex">
+                                  <div class="flex-grow-1">
+                                    <p class="text-muted mb-4"></p>
+                                  </div>
+                                  <div class="flex-shrink-0">
+                                    <div class="d-flex gap-1 align-items-center">
+                                      menu
+                                    </div>
+                                  </div>
+                                </div>
+      
+                                <div class="d-flex mb-2 rounded bg-info-subtle p-2">
+                                  <div class="flex-grow-1">
+                                    <h5>Tên thẻ</h5>
+                                    <div class="d-flex">
+                                      <span class="badge bg-success me-1"
+                                        >giao diện</span
+                                      >
+                                      <span class="badge bg-danger">code khó</span>
+                                    </div>
+                                    <div class="mt-3 d-flex justify-content-between">
+                                      <div class="avatar-group">
+                                        <a
+                                          href="javascript: void(0);"
+                                          class="avatar-group-item"
+                                          data-bs-toggle="tooltip"
+                                          data-bs-trigger="hover"
+                                          data-bs-placement="top"
+                                          title="Darline Williams"
+                                        >
+                                          <div class="avatar-xxs">
+                                            <img
+                                              src="assets/images/users/avatar-2.jpg"
+                                              alt=""
+                                              class="rounded-circle img-fluid"
+                                            />
+                                          </div>
+                                        </a>
+                                        <a
+                                          href="javascript: void(0);"
+                                          class="avatar-group-item"
+                                          data-bs-toggle="tooltip"
+                                          data-bs-trigger="hover"
+                                          data-bs-placement="top"
+                                          title="Add Members"
+                                        >
+                                          <div class="avatar-xxs">
+                                            <div
+                                              class="avatar-title fs-16 rounded-circle bg-light border-dashed border text-primary"
+                                            >
+                                              +
+                                            </div>
+                                          </div>
+                                        </a>
+                                      </div>
+                                      <ul class="link-inline mb-0">
+                                        <!-- theo dõi -->
+                                        <li class="list-inline-item">
+                                          <a
+                                            href="javascript:void(0)"
+                                            class="text-muted"
+                                            ><i class="ri-eye-line align-bottom"></i>
+                                            04</a
+                                          >
+                                        </li>
+                                        <!-- bình luận -->
+                                        <li class="list-inline-item">
+                                          <a
+                                            href="javascript:void(0)"
+                                            class="text-muted"
+                                            ><i
+                                              class="ri-question-answer-line align-bottom"
+                                            ></i>
+                                            19</a
+                                          >
+                                        </li>
+                                        <!-- tệp đính kèm -->
+                                        <li class="list-inline-item">
+                                          <a
+                                            href="javascript:void(0)"
+                                            class="text-muted"
+                                            ><i
+                                              class="ri-attachment-2 align-bottom"
+                                            ></i>
+                                            02</a
+                                          >
+                                        </li>
+                                        <!-- checklist -->
+                                        <li class="list-inline-item">
+                                          <a
+                                            href="javascript:void(0)"
+                                            class="text-muted"
+                                            ><i
+                                              class="ri-checkbox-line align-bottom"
+                                            ></i>
+                                            2/4</a
+                                          >
+                                        </li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- end card body -->
+                            <div
+                              class="card-footer bg-transparent border-top-dashed py-2"
+                            >
+                              <div class="flex-grow-1">Tên bảng : Tên list</div>
+                            </div>
+                            <!-- end card footer -->
+                          </div>
+                          <!-- end card -->
+                        </div>
+                        <!-- start card -->
+                        <div class="col-6">
+                          <div class="card card-height-100">
+                            <div class="card-body">
+                              <div class="d-flex flex-column h-100">
+                                <div class="d-flex">
+                                  <div class="flex-grow-1">
+                                    <p class="text-muted mb-4"></p>
+                                  </div>
+                                  <div class="flex-shrink-0">
+                                    <div class="d-flex gap-1 align-items-center">
+                                      menu
+                                    </div>
+                                  </div>
+                                </div>
+      
+                                <div class="d-flex mb-2 rounded bg-info-subtle p-2">
+                                  <div class="flex-grow-1">
+                                    <h5>Tên thẻ</h5>
+                                    <div class="d-flex">
+                                      <span class="badge bg-success me-1"
+                                        >giao diện</span
+                                      >
+                                      <span class="badge bg-danger">code khó</span>
+                                    </div>
+                                    <div class="mt-3 d-flex justify-content-between">
+                                      <div class="avatar-group">
+                                        <a
+                                          href="javascript: void(0);"
+                                          class="avatar-group-item"
+                                          data-bs-toggle="tooltip"
+                                          data-bs-trigger="hover"
+                                          data-bs-placement="top"
+                                          title="Darline Williams"
+                                        >
+                                          <div class="avatar-xxs">
+                                            <img
+                                              src="assets/images/users/avatar-2.jpg"
+                                              alt=""
+                                              class="rounded-circle img-fluid"
+                                            />
+                                          </div>
+                                        </a>
+                                        <a
+                                          href="javascript: void(0);"
+                                          class="avatar-group-item"
+                                          data-bs-toggle="tooltip"
+                                          data-bs-trigger="hover"
+                                          data-bs-placement="top"
+                                          title="Add Members"
+                                        >
+                                          <div class="avatar-xxs">
+                                            <div
+                                              class="avatar-title fs-16 rounded-circle bg-light border-dashed border text-primary"
+                                            >
+                                              +
+                                            </div>
+                                          </div>
+                                        </a>
+                                      </div>
+                                      <ul class="link-inline mb-0">
+                                        <!-- theo dõi -->
+                                        <li class="list-inline-item">
+                                          <a
+                                            href="javascript:void(0)"
+                                            class="text-muted"
+                                            ><i class="ri-eye-line align-bottom"></i>
+                                            04</a
+                                          >
+                                        </li>
+                                        <!-- bình luận -->
+                                        <li class="list-inline-item">
+                                          <a
+                                            href="javascript:void(0)"
+                                            class="text-muted"
+                                            ><i
+                                              class="ri-question-answer-line align-bottom"
+                                            ></i>
+                                            19</a
+                                          >
+                                        </li>
+                                        <!-- tệp đính kèm -->
+                                        <li class="list-inline-item">
+                                          <a
+                                            href="javascript:void(0)"
+                                            class="text-muted"
+                                            ><i
+                                              class="ri-attachment-2 align-bottom"
+                                            ></i>
+                                            02</a
+                                          >
+                                        </li>
+                                        <!-- checklist -->
+                                        <li class="list-inline-item">
+                                          <a
+                                            href="javascript:void(0)"
+                                            class="text-muted"
+                                            ><i
+                                              class="ri-checkbox-line align-bottom"
+                                            ></i>
+                                            2/4</a
+                                          >
+                                        </li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- end card body -->
+                            <div
+                              class="card-footer bg-transparent border-top-dashed py-2"
+                            >
+                              <div class="flex-grow-1">Tên bảng : Tên list</div>
+                            </div>
+                            <!-- end card footer -->
+                          </div>
+                          <!-- end card -->
+                        </div>
+                      </div>
+                      <div class="ps-4">
+                        <strong>Tệp</strong>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- việc cần làm -->
+                  <div class="row mt-3">
+                    <section class="d-flex justify-content-between">
+                      <section class="d-flex">
+                        <i class="ri-checkbox-line fs-22"></i>
+                        <p class="fs-18 ms-2 mt-1">Việc cần làm</p>
+                      </section>
+                      <button class="btn btn-outline-dark" style="height: 35px">
+                        Xóa
+                      </button>
+                    </section>
+                    <div class="ps-4">
+                      <div
+                        class="progress animated-progress bg-light-subtle"
+                        style="height: 20px"
+                      >
+                        <div
+                          class="progress-bar bg-success"
+                          role="progressbar"
+                          style="width: 50%"
+                          aria-valuenow="50"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                        >
+                          50%
+                        </div>
+                      </div>
+                      <div class="table-responsive table-hover table-card">
+                        <table class="table table-nowrap mt-4">
+                          <tbody>
+                            <tr class="cursor-pointer">
+                              <td class="col-1">
+                                <div class="form-check">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    value=""
+                                    id="cardtableCheck01"
+                                  />
+                                </div>
+                              </td>
+                              <td>
+                                <p>checklist1</p>
+                              </td>
+                              <td class="text-end">
+                                <i class="ri-time-line fs-20 ms-2"></i>
+                                <i class="ri-user-add-line fs-20 ms-2"></i>
+                                <i class="ri-more-fill fs-20 ms-2"></i>
+                              </td>
+                            </tr>
+                            <tr class="cursor-pointer addOrUpdate-checklist ">
+                              <td class="col-1">
+                                <div class="form-check">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    value=""
+                                    id="cardtableCheck01"
+                                  />
+                                </div>
+                              </td>
+                              <td colspan="2">
+                                <form
+                                  action=""
+                                  class="w-100"
+                                  aria-labelledby="checklistItem"
+                                >
+                                  <input
+                                    type="text"
+                                    name=""
+                                    id=""
+                                    class="form-control"
+                                    placeholder="Thêm mục"
+                                  />
+                                  <div class="d-flex mt-3 justify-content-between">
+                                    <div>
+                                      <button class="btn btn-primary">Thêm</button>
+                                      <button class="btn btn-outline-dark disable-checklist">
+                                        Hủy
+                                      </button>
+                                    </div>
+                                    <div>
+                                      <i class="ri-time-line fs-20 ms-2"></i>
+                                      <span>Chỉ định</span>
+                                      <i class="ri-user-add-line fs-20 ms-2"></i>
+                                      <span>Ngày hết hạn</span>
+                                    </div>
+                                  </div>
+                                </form>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <button class="btn btn-outline-dark ms-3 display-checklist">
+                        Thêm mục
+                      </button>
+                    </div>
+                  </div>
+                  <div class="row mt-4">
+                    <section class="d-flex">
+                      <i class="ri-line-chart-line fs-22"></i>
+                      <p class="fs-18 ms-2 mt-1">Hoạt động</p>
+                    </section>
+                    <div class="ps-4">
+                      <textarea
+                        name=""
+                        id=""
+                        cols="25"
+                        rows="5"
+                        class="form-control bg-light"
+                        placeholder="Viết bình luận..."
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-4 ">
+                  <h5 class="mt-3 mb-3"><strong>Thêm vào thẻ</strong></h5>
+                  <div class="d-flex mt-3 mb-3 cursor-pointer">
+                    <div
+                      class="d-flex align-items-center justify-content-flex-start rounded p-3 text-white"
+                      style="width: 80%; height: 30px; background-color: darkgray"
+                    >
+                      <i class="las la-user"></i>
+                      <p
+                        class="ms-2 mt-3 fs-15"
+                        data-bs-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        Thành viên
+                      </p>
+      
+                      <div class="dropdown-menu dropdown-menu-md p-4">
+                        <form>
+                          <h5 class="mb-3" style="text-align: center">Thành viên</h5>
+                          <div class="mb-2">
+                            <input
+                              type="search"
+                              class="form-control"
+                              placeholder="Tìm kiếm tên thành viên"
+                            />
+                          </div>
+                          <div class="mb-2">
+                            <label class="form-label" for=""
+                              >Thành viên của thẻ</label
+                            >
+                            <div class="mt-2 mb-2">
+                              <a
+                                href="javascript: void(0);"
+                                class="avatar-group-item"
+                                data-bs-trigger="hover"
+                                data-bs-placement="top"
+                                title="Nancy"
+                              >
+                                <img
+                                  src="assets/images/users/avatar-5.jpg"
+                                  alt=""
+                                  class="rounded-circle avatar-xs"
+                              /></a>
+                              <span>Name Member</span>
+                            </div>
+                          </div>
+                          <div class="mb-2">
+                            <label class="form-label" for=""
+                              >Thành viên của bảng</label
+                            >
+                            <div class="mt-2 mb-2">
+                              <a
+                                href="javascript: void(0);"
+                                class="avatar-group-item"
+                                data-bs-trigger="hover"
+                                data-bs-placement="top"
+                                title="Nancy"
+                              >
+                                <img
+                                  src="assets/images/users/avatar-2.jpg"
+                                  alt=""
+                                  class="rounded-circle avatar-xs"
+                              /></a>
+                              <span>Name Member</span>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="d-flex mt-3 mb-3 cursor-pointer">
+                    <div
+                      class="d-flex align-items-center justify-content-flex-start rounded p-3 text-white"
+                      style="width: 80%; height: 30px; background-color: darkgray"
+                    >
+                      <i class="las la-tag"></i>
+                      <p
+                        class="ms-2 mt-3 fs-15"
+                        data-bs-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        Nhãn
+                      </p>
+      
+                      <div class="dropdown-menu dropdown-menu-md p-4">
+                        <form>
+                          <h5 class="mb-3" style="text-align: center">Nhãn</h5>
+                          <div class="mb-2">
+                            <input
+                              type="search"
+                              class="form-control"
+                              placeholder="Tìm nhãn"
+                            />
+                          </div>
+                          <div class="mb-2">
+                            <label
+                              for="primary_tags"
+                              class="d-flex align-items-center"
+                            >
+                              <input type="checkbox" name="" id="primary_tags" />
+                              <span class="bg bg-primary mx-2 rounded p-3 col-11">
+                              </span>
+                            </label>
+                            <br />
+                            <label
+                              for="danger_tags"
+                              class="d-flex align-items-center"
+                            >
+                              <input type="checkbox" name="" id="danger_tags" />
+                              <span class="bg bg-danger mx-2 rounded p-3 col-11">
+                              </span>
+                            </label>
+                            <br />
+                            <label
+                              for="success_tags"
+                              class="d-flex align-items-center"
+                            >
+                              <input type="checkbox" name="" id="success_tags" />
+                              <span class="bg bg-success mx-2 rounded p-3 col-11">
+                              </span>
+                            </label>
+                          </div>
+                          <button type="button" class="btn btn-light waves-effect">
+                            Tạo nhãn mới
+                          </button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="d-flex mt-3 mb-3 cursor-pointer">
+                    <div
+                      class="d-flex align-items-center justify-content-flex-start rounded p-3 text-white"
+                      style="width: 80%; height: 30px; background-color: darkgray"
+                    >
+                      <i class="las la-check-square"></i>
+                      <p
+                        class="ms-2 mt-3 fs-15"
+                        data-bs-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        Việc cần làm
+                      </p>
+                      <div class="dropdown-menu dropdown-menu-md p-4">
+                        <form>
+                          <h5 class="mb-3" style="text-align: center">
+                            Thêm danh sách công việc
+                          </h5>
+                          <div class="mb-2">
+                            <label class="form-label" for="">Tiêu đề</label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              placeholder="Việc cần làm"
+                            />
+                          </div>
+                          <div class="mb-2">
+                            <label class="form-label" for="">Sao chép từ mục</label>
+                            <select name="" id="" class="form-control">
+                              <option value="1">AAAA</option>
+                              <option value="2">BBBB</option>
+                              <option value="3">CCCC</option>
+                            </select>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="d-flex mt-3 mb-3 cursor-pointer">
+                    <div
+                      class="d-flex align-items-center justify-content-flex-start rounded p-3 text-white"
+                      style="width: 80%; height: 30px; background-color: darkgray"
+                    >
+                      <i class="las la-clock"></i>
+                      <p
+                        class="ms-2 mt-3 fs-15"
+                        data-bs-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        Ngày
+                      </p>
+                      <div class="dropdown-menu dropdown-menu-md p-4">
+                        <form>
+                          <h5 class="mb-3" style="text-align: center">Ngày</h5>
+                          <div class="mb-2">
+                            <label class="form-label" for="">Ngày bắt đầu</label>
+                            <input type="date" class="form-control" />
+                          </div>
+                          <div class="mb-2">
+                            <label class="form-label" for="">Ngày kết thúc</label>
+                            <input type="date" class="form-control" />
+                          </div>
+                          <div class="mb-2">
+                            <label class="form-label" for=""
+                              >Thiết lập nhắc hẹn</label
+                            >
+                            <select name="" id="" class="form-control">
+                              <option value="1">Trước 1 giờ</option>
+                              <option value="2">Trước 1 ngày</option>
+                              <option value="3">Trươc 10 phút</option>
+                            </select>
+                          </div>
+                          <button type="button" class="btn btn-primary waves-effect">
+                            Lưu
+                          </button>
+                          <button type="button" class="btn btn-light waves-effect">
+                            Gỡ bỏ
+                          </button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="d-flex mt-3 mb-3 cursor-pointer">
+                    <div
+                      class="d-flex align-items-center justify-content-flex-start rounded p-3 text-white"
+                      style="width: 80%; height: 30px; background-color: darkgray"
+                    >
+                      <i class="las la-paperclip"></i>
+                      <p
+                        class="ms-2 mt-3 fs-15"
+                        data-bs-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        Đính kèm
+                      </p>
+                      <div class="dropdown-menu dropdown-menu-md p-4">
+                        <form>
+                          <h5 class="mb-3" style="text-align: center">
+                            Tệp đính kèm
+                          </h5>
+                          <div class="mb-2">
+                            <label class="form-label" for="">Thêm tệp đính kèm</label>
+                            <input type="file" class="form-control" />
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="d-flex mt-3 mb-3 cursor-pointer">
+                    <div
+                      class="d-flex align-items-center justify-content-flex-start rounded p-3 text-white"
+                      style="width: 80%; height: 30px; background-color: darkgray"
+                    >
+                      <i class="las la-map-marker"></i>
+                      <p
+                        class="ms-2 mt-3 fs-15"
+                        data-bs-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        Vị trí
+                      </p>
+                      <div class="dropdown-menu dropdown-menu-md p-4">
+                        <form>
+                          <h5 class="mb-3" style="text-align: center">Thêm vị trí</h5>
+                          <div class="mb-2">
+                            <input
+                              type="search"
+                              class="form-control"
+                              placeholder="Tìm kiếm vị trí"
+                            />
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="d-flex mt-3 mb-3 cursor-pointer">
+                    <div
+                      class="d-flex align-items-center justify-content-flex-start rounded p-3 text-white"
+                      style="width: 80%; height: 30px; background-color: darkgray"
+                    >
+                      <i class="las la-credit-card"></i>
+                      <p
+                        class="ms-2 mt-3 fs-15"
+                        data-bs-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        Ảnh bìa
+                      </p>
+                      <div class="dropdown-menu dropdown-menu-md p-4">
+                        <form>
+                          <h5 class="mb-3" style="text-align: center">Ảnh bìa</h5>
+                          <div class="mb-2">
+                            <label for="">Tải ảnh lên</label>
+                            <input type="file" class="form-control" />
+                          </div>
+                          <div class="mb-2">
+                            <label for="">Tải ảnh lên</label>
+                            <input type="file" class="form-control" />
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                  <h5 class="mt-3 mb-3"><strong>Thao tác</strong></h5>
+                  <div class="d-flex mt-3 mb-3 cursor-pointer">
+                    <div
+                      class="d-flex align-items-center justify-content-flex-start rounded p-3 text-white"
+                      style="width: 80%; height: 30px; background-color: darkgray"
+                    >
+                      <i class="las la-arrow-circle-right"></i>
+                      <p
+                        class="ms-2 mt-3 fs-15"
+                        data-bs-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        Di chuyển
+                      </p>
+                      <div class="dropdown-menu dropdown-menu-md p-4">
+                        <form>
+                          <h5 class="mb-3" style="text-align: center">
+                            Di chuyển thẻ
+                          </h5>
+                          <h5>Chọn đích đến</h5>
+                          <div class="mb-2">
+                            <label for="">Bảng thông tin </label>
+                            <select
+                              class="form-select mb-3"
+                              aria-label="Default select example"
+                            >
+                              <option selected>Open this select menu</option>
+                              <option value="1">One</option>
+                              <option value="2">Two</option>
+                              <option value="3">Three</option>
+                            </select>
+                          </div>
+                          <div class="mb-2">
+                            <label for="">Danh sách</label>
+                            <select
+                              class="form-select mb-3"
+                              aria-label="Default select example"
+                            >
+                              <option selected>Open this select menu</option>
+                              <option value="1">One</option>
+                              <option value="2">Two</option>
+                              <option value="3">Three</option>
+                            </select>
+                          </div>
+                          <button type="button" class="btn btn-primary waves-effect">
+                            Di chuyển
+                          </button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="d-flex mt-3 mb-3 cursor-pointer">
+                    <div
+                      class="d-flex align-items-center justify-content-flex-start rounded p-3 text-white"
+                      style="width: 80%; height: 30px; background-color: darkgray"
+                    >
+                      <i class="las la-copy"></i>
+                      <p
+                        class="ms-2 mt-3 fs-15"
+                        data-bs-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        Sao chép
+                      </p>
+                      <div class="dropdown-menu dropdown-menu-md p-4">
+                        <form>
+                          <h5 class="mb-3" style="text-align: center">
+                            Sao chép thẻ
+                          </h5>
+                          <div class="mb-2">
+                            <label for="">Tên </label>
+                            <input type="text" name="" id="" class="form-control" />
+                          </div>
+                          <h5>Sao chép đến</h5>
+                          <div class="mb-2">
+                            <label for="">Bảng thông tin </label>
+                            <select
+                              class="form-select mb-3"
+                              aria-label="Default select example"
+                            >
+                              <option selected>Open this select menu</option>
+                              <option value="1">One</option>
+                              <option value="2">Two</option>
+                              <option value="3">Three</option>
+                            </select>
+                          </div>
+                          <div class="mb-2">
+                            <label for="">Danh sách</label>
+                            <select
+                              class="form-select mb-3"
+                              aria-label="Default select example"
+                            >
+                              <option selected>Open this select menu</option>
+                              <option value="1">One</option>
+                              <option value="2">Two</option>
+                              <option value="3">Three</option>
+                            </select>
+                          </div>
+                          <button type="button" class="btn btn-primary waves-effect">
+                            Di chuyển
+                          </button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+      
+                  <div class="d-flex mt-3 mb-3 cursor-pointer">
+                    <div
+                      class="d-flex align-items-center justify-content-flex-start rounded p-3 text-white"
+                      style="width: 80%; height: 30px; background-color: darkgray"
+                    >
+                      <i class="las la-chalkboard"></i>
+                      <p
+                        class="ms-2 mt-3 fs-15"
+                        data-bs-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        Tạo mẫu
+                      </p>
+                      <div></div>
+                    </div>
+                  </div>
+                  <div class="d-flex mt-3 mb-3 cursor-pointer">
+                    <div
+                      class="d-flex align-items-center justify-content-flex-start rounded p-3 text-white"
+                      style="width: 80%; height: 30px; background-color: darkgray"
+                    >
+                      <i class="las la-window-restore"></i>
+                      <p
+                        class="ms-2 mt-3 fs-15"
+                        data-bs-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        Lưu trữ
+                      </p>
+                      <div></div>
+                    </div>
+                  </div>
+                  <div class="d-flex mt-3 mb-3 cursor-pointer">
+                    <div
+                      class="d-flex align-items-center justify-content-flex-start rounded p-3 text-white"
+                      style="width: 80%; height: 30px; background-color: darkgray"
+                    >
+                      <i class="las ri-share-line"></i>
+                      <p class="ms-2 mt-3 fs-15">Chia sẻ</p>
+                      <div></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      
+   
+    </div>
+  </body>
+  <script>
+    const daysTag = document.querySelector(".days"),
+      currentDate = document.querySelector(".current-date"),
+      prevNextIcon = document.querySelectorAll(".icons span");
+
+    // getting new date, current year and month
+    let date = new Date(),
+      currYear = date.getFullYear(),
+      currMonth = date.getMonth();
+
+    // storing full name of all months in array
+    const months = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+
+    const renderCalendar = () => {
+      let firstDayofMonth = new Date(currYear, currMonth, 1).getDay(), // getting first day of month
+        lastDateofMonth = new Date(currYear, currMonth + 1, 0).getDate(), // getting last date of month
+        lastDayofMonth = new Date(
+          currYear,
+          currMonth,
+          lastDateofMonth
+        ).getDay(), // getting last day of month
+        lastDateofLastMonth = new Date(currYear, currMonth, 0).getDate(); // getting last date of previous month
+      let liTag = "";
+
+      for (let i = firstDayofMonth; i > 0; i--) {
+        // creating li of previous month last days
+        liTag += `<li class="inactive">${lastDateofLastMonth - i + 1}</li>`;
+      }
+
+      for (let i = 1; i <= lastDateofMonth; i++) {
+        // creating li of all days of current month
+        // adding active class to li if the current day, month, and year matched
+        let isToday =
+          i === date.getDate() &&
+          currMonth === new Date().getMonth() &&
+          currYear === new Date().getFullYear()
+            ? "active"
+            : "";
+        liTag += `<li class="${isToday}">${i}</li>`;
+      }
+
+      for (let i = lastDayofMonth; i < 6; i++) {
+        // creating li of next month first days
+        liTag += `<li class="inactive">${i - lastDayofMonth + 1}</li>`;
+      }
+      currentDate.innerText = `${months[currMonth]} ${currYear}`; // passing current mon and yr as currentDate text
+      daysTag.innerHTML = liTag;
+    };
+    renderCalendar();
+
+    prevNextIcon.forEach((icon) => {
+      // getting prev and next icons
+      icon.addEventListener("click", () => {
+        // adding click event on both icons
+        // if clicked icon is previous icon then decrement current month by 1 else increment it by 1
+        currMonth = icon.id === "prev" ? currMonth - 1 : currMonth + 1;
+
+        if (currMonth < 0 || currMonth > 11) {
+          // if current month is less than 0 or greater than 11
+          // creating a new date of current year & month and pass it as date value
+          date = new Date(currYear, currMonth, new Date().getDate());
+          currYear = date.getFullYear(); // updating current year with new date year
+          currMonth = date.getMonth(); // updating current month with new date month
+        } else {
+          date = new Date(); // pass the current date as date value
+        }
+        renderCalendar(); // calling renderCalendar function
+      });
+    });
+  </script>
+  <!-- JAVASCRIPT -->
+  <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/libs/simplebar/simplebar.min.js"></script>
+  <script src="assets/libs/node-waves/waves.min.js"></script>
+  <script src="assets/libs/feather-icons/feather.min.js"></script>
+  <script src="assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+  <script src="assets/js/plugins.js"></script>
+  <!-- App js -->
+  <script src="assets/js/app.js"></script>
+</html>
